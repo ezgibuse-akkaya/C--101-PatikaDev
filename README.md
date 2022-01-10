@@ -80,7 +80,7 @@ namespace Degiskenler
 ```
 </details>
 
-## :brain: Ödev 1
+## :brain: Ödev 2
 
 ### :question: SORU 
 Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.

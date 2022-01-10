@@ -351,7 +351,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csahrp
 using System;
 
-namespace HataYonetimi
+namespace Karar_Yapilari
 {
     class Program
     {
@@ -422,7 +422,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csharp
 using System;
 
-namespace HataYonetimi
+namespace Donguler
 {
     class Program
     {
@@ -485,7 +485,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csharp
 using System;
 
-namespace HataYonetimi
+namespace Donguler
 {
     class Program
     {
@@ -521,3 +521,56 @@ namespace HataYonetimi
 }
 ```
 </details>
+
+## :brain: Ödev 9 (Diziler)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace Diziler
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           //dizi tanımlama
+           string[] renkler=new string[5];
+           string[] hayvanlar={"kedi","köpek","kuş"};
+           int[] dizi;
+           dizi= new int[5];
+           //dizilere değer atama ve erişim
+           renkler[0]="Mavi";
+           dizi[3]=10;
+           Console.WriteLine(dizi[3]);
+           Console.WriteLine(hayvanlar[0]);
+
+           //döngülerle dizi kullanımı
+           //klavyeden girilen n tane sayının ortalamasını alan program
+           Console.WriteLine("Lütfen dizini eleman sayısını giriniz: ");
+           int diziUzunlugu=int.Parse(Console.ReadLine());
+           int[] sayiDizisi=new int[diziUzunlugu];
+           for (int i = 0; i < diziUzunlugu; i++)
+           {
+               Console.WriteLine("Lütfen {0}. sayıyı giriniz: ",i+1);
+               sayiDizisi[i]=int.Parse(Console.ReadLine());
+
+           }
+           int toplam=0;
+           foreach (var sayi in sayiDizisi)
+           {
+             toplam+=sayi;
+             Console.WriteLine("Ortalama", toplam/diziUzunlugu);
+               
+           }
+        }
+       }
+ }
+ ```
+</details>                                            

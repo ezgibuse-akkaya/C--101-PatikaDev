@@ -13,7 +13,9 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
+    
 ```csahrp
+    
 using System;
 
 namespace Degiskenler

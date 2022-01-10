@@ -473,3 +473,51 @@ namespace HataYonetimi
 ```
 </details>
     
+## :brain: Ödev 8 (döngüler 2)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace HataYonetimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Lütfen bir sayi giriniz: ");
+            //1 den baslayarak console dan girilen sayıya kadar ortalama hesaplayıp console a yazdıran program
+            int sayi=int.Parse(Console.ReadLine());
+            int sayac=1;
+            int toplam=0;
+           while (sayac<=sayi)
+           {
+               toplam+=sayac;
+               sayac++; 
+           }
+           Console.WriteLine(toplam/sayi);
+        
+        //a-z tüm harfleri yaz
+        char karakter='a';
+        while (karakter<'z')
+        {
+             Console.Write(karakter);
+             karakter++;
+        }
+        //foreach
+        string [] arabalar={"BMW", "Ford","Toyota","Nissan"};
+        foreach (var araba in arabalar)
+        {
+            Console.WriteLine(araba);
+        }
+        }
+       }
+}
+```
+</details>

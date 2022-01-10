@@ -311,7 +311,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csahrp
 using System;
 
-namespace HataYonetimi
+namespace KararYapilari
 {
     class Program
     {

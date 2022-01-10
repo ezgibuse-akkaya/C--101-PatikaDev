@@ -298,3 +298,43 @@ namespace HataYonetimi
 }
 ```
 </details>
+
+## :brain: Ödev 5 (Karar Yapıları)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csahrp
+using System;
+
+namespace HataYonetimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int time=DateTime.Now.Hour;
+           if(time>=6 && time<11){
+               Console.WriteLine("Günaydın");
+           }
+           else if(time<=18)
+           {
+               Console.WriteLine("İyi Günler");
+           }
+           else{
+               Console.WriteLine("İyi Geceler");
+           string sonuc=time<=18 ? "İyi Günler" : "İyi Geceler";
+          
+           sonuc=time>=6 &&  time<11 ? "Günaydin" :time<=18 ? "İyi Günler" : "İyi Geceler";
+           Console.WriteLine(sonuc);
+           }
+
+        }
+    }
+}
+```
+</details>

@@ -573,4 +573,71 @@ namespace Diziler
        }
  }
  ```
-</details>                                            
+</details>   
+    
+## :brain: Ödev 10 (diziler 2)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace HataYonetimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //sort
+         int [] sayiDizisi={23,12,4,86,72,3,11,17};
+         Console.WriteLine("sırasız dizi");
+         foreach (var sayi in sayiDizisi)
+         {
+             Console.WriteLine(sayi);
+             
+         }
+         Console.WriteLine("sıralı dizi");
+         Array.Sort(sayiDizisi);
+         foreach (var sayi in sayiDizisi)
+         {
+             Console.WriteLine(sayi);
+         }
+         //clear
+         //ikinci indexten sonra 2 tane 0 yapar
+                  Console.WriteLine("array clear ");
+                  Array.Clear(sayiDizisi,2,2);
+                  foreach (var sayi in sayiDizisi)
+                  {
+                      Console.WriteLine(sayi);
+                  }
+          //reverse
+          //elemanları tersine cevirir
+          Array.Reverse(sayiDizisi);
+          foreach (var sayi in sayiDizisi)
+          {
+              Console.WriteLine(sayi);
+              
+          }
+          //indexOf
+            Console.WriteLine(Array.IndexOf(sayiDizisi,23));
+         //resize
+         Array.Resize<int>(ref sayiDizisi,9);
+         sayiDizisi[8]=99;
+         foreach (var sayi in sayiDizisi)
+         {
+             Console.WriteLine(sayi);
+         }
+
+             
+              
+          
+        }
+       }
+}
+```
+</details>

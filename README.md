@@ -164,7 +164,8 @@ namespace Operatorler
 }
 ```
 </details>
-## :brain: Ödev 1
+    
+## :brain: Ödev 3
 
 ### :question: SORU 
 Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.

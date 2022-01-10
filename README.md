@@ -14,7 +14,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
     
-```csahrp
+```csharp
     
 using System;
 
@@ -88,7 +88,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
     
-```csahrp
+```csharp
 using System;
 
 namespace Operatorler
@@ -173,7 +173,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
     
-```csahrp
+```csharp
 using System;
 
 namespace Tip_Donusumleri
@@ -251,7 +251,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
     
-```csahrp
+```csharp
 using System;
 
 namespace HataYonetimi
@@ -308,7 +308,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
     
-```csahrp
+```csharp
 using System;
 
 namespace KararYapilari
@@ -348,7 +348,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 <details>
 <summary>Kodu görmek için tıklayınız.</summary>
     
-```csahrp
+```csharp
 using System;
 
 namespace Karar_Yapilari
@@ -632,12 +632,19 @@ namespace HataYonetimi
          {
              Console.WriteLine(sayi);
          }
-
-             
-              
-          
         }
        }
 }
 ```
 </details>
+
+## :brain: Ödev 11 (Metotlar)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp

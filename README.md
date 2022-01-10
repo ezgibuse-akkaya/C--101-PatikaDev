@@ -5,7 +5,7 @@
 Bu README dosyasında Patika.Dev C# Ödev Soruları Ve Yanıtlarını bulacaksınız.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## :brain: Ödev 1
+## :brain: Ödev 1 (değişkenler)
 
 ### :question: SORU 
 Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
@@ -80,8 +80,7 @@ namespace Degiskenler
 ```
 </details>
 
-## :brain: Ödev 2
-
+## :brain: Ödev 2 (operatörler)
 ### :question: SORU 
 Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
 ### :green_square: CEVAP
@@ -165,7 +164,7 @@ namespace Operatorler
 ```
 </details>
     
-## :brain: Ödev 3
+## :brain: Ödev 3 (tip dönüşümleri)
 
 ### :question: SORU 
 Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
@@ -237,6 +236,63 @@ namespace Tip_Donusumleri
            sayi2 = Double.Parse(yazi2);
            toplam = Convert.ToDouble(sayi1)+sayi2;
            Console.WriteLine(toplam);
+        }
+    }
+}
+```
+</details>
+
+## :brain: Ödev 4 (hata yönetimi)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csahrp
+using System;
+
+namespace HataYonetimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try{
+          Console.WriteLine("Bir sayı griniz: ");
+          int sayi=Convert.ToInt32(Console.ReadLine());
+          Console.WriteLine("Girmiş olduğunuz sayi: " +sayi);
+
+            }
+            catch(Exception ex){
+            Console.WriteLine("Hata" +ex.Message.ToString());
+            }
+            //finally{
+            //Console.Write("İşlem Tamamlandı");
+            //}
+            try{
+            //int a=int.Parse(null);
+            //int a=int.Parse("test");
+            int a=int.Parse("-141415161718");
+
+            }
+            catch(ArgumentNullException ex) {
+            Console.WriteLine("Boş değer Girdiniz.");
+            Console.WriteLine(ex);
+            }
+            catch(FormatException ex){
+            Console.WriteLine("Veri Tipi Uygun Değil.");
+            Console.WriteLine(ex);
+            }
+            catch(OverflowException ex){
+            Console.WriteLine("Çok küçük veya çok büyük bir değer girdiniz.");
+            Console.WriteLine(ex);
+            }
+            finally{
+                Console.WriteLine("İşlem Başarıyla Tamamlandı");
+            }
         }
     }
 }

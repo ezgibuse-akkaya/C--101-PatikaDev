@@ -1600,6 +1600,8 @@ namespace contacts_app_csharp
     }
 }
 ```
+</details>
+    
 ## :brain: Proje 2 (ToDo Uygulaması)
 
 ### :question: SORU 

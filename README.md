@@ -587,7 +587,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csharp
 using System;
 
-namespace HataYonetimi
+namespace Diziler
 {
     class Program
     {
@@ -650,7 +650,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csharp
 using System;
 
-namespace HataYonetimi
+namespace Metotlar
 {
     class Program
     {
@@ -696,3 +696,120 @@ namespace HataYonetimi
 }
 ```
 </details>
+
+## :brain: Ödev 12 (Metotlar)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace Metot_Overloading
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {  
+         //out parametreler
+         string sayi="999";
+
+         bool sonuc=int.TryParse(sayi,out int outSayi);
+         if(sonuc){
+             Console.WriteLine("Başarılı");
+             Console.WriteLine(outSayi);
+         }
+         else{
+             Console.WriteLine("Başarısız");
+            }
+         Metotlar instence=new Metotlar();
+         instence.Topla(4,5, out int ToplamSonucu);
+         Console.WriteLine(ToplamSonucu);
+         //metot asırı yüklenme-overloading
+
+         int ifade=999;
+         instence.ekranaYazdir(Convert.ToString(ifade));
+         instence.ekranaYazdir("ezgi","buse");
+        //metod imzası
+        //metotadi+parametre sayisi+parametre
+        }
+       }
+       class Metotlar{
+           public void Topla(int a, int b, out int toplam){
+               toplam=a+b;
+           }
+           public void ekranaYazdir(string veri){
+               Console.WriteLine(veri);
+           }
+            public void ekranaYazdir(string veri,string veri2){
+               Console.WriteLine(veri+veri2);
+           }
+       }
+}
+```
+</details>
+    
+## :brain: Ödev 13 (Metotlar)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace HataYonetimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {  
+          //recursive-özyinelemeli
+          //3^4
+          int result=1;
+          for (int i = 0; i < 5; i++)
+          {
+              result=result*3;
+              Console.WriteLine(result);
+              islemler instence=new();
+              Console.WriteLine(instence.Expo(3,4));
+
+              //extension metotlar
+              string ifade="Ezgi Buse Akkaya";
+              bool sonuc=ifade.CheckSpaces();
+              Console.WriteLine(sonuc);
+              if(sonuc){
+                  Console.WriteLine(ifade.RemoveWhiteSpaces());
+              }
+          }
+        }
+        public class islemler{
+            public int Expo(int sayi,int us){
+                if(us<2)
+                return sayi;
+                return Expo(sayi,us-1)*sayi;
+            }
+            
+                 
+            }
+            public static class Extension{
+                public static bool CheckSpaces(this string param){
+                  return param.Contains(" ");
+                }
+            }
+            public static string RemoveWhiteSpaces(this string param){
+                string[] dzi=param.Split(" ");
+                return string.Join("",dizi);
+            }
+            }
+}
+```
+</details>
+       

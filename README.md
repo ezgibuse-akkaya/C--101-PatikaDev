@@ -765,7 +765,7 @@ Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlay
 ```csharp
 using System;
 
-namespace HataYonetimi
+namespace Recursive_Extension
 {
     class Program
     {
@@ -813,3 +813,13 @@ namespace HataYonetimi
 ```
 </details>
        
+## :brain: Ödev 14 ()
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp

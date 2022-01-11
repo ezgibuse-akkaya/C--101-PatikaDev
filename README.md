@@ -955,3 +955,361 @@ namespace Odev_1
 }
 ```
 </details>
+
+## :brain: Ödev 14 (Hazır Metotlar)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace string Metot
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {  
+         string degisken="Dersimiz CSharp, Hoşgeldiniz";
+         string degisken2="dersimiz CSharp, hosgeldiniz";
+         //length
+         Console.WriteLine(degisken.Length);
+         ////Toupper,Tolower
+         Console.WriteLine(degisken.ToLower());
+         Console.WriteLine(degisken.ToUpper());
+         //concat(birlestirme)
+         Console.WriteLine(String.Concat(degisken,"Merhaba"));
+         //compare,compareTo(aynı ise 0,buyuk ise 1,kücükse -1)
+         Console.WriteLine(degisken.CompareTo(degisken2));
+         Console.WriteLine(string.Compare(degisken,degisken2,true));
+         Console.WriteLine(string.Compare(degisken,degisken2,false));
+          //contains
+          Console.WriteLine(degisken.Contains(degisken2));
+          Console.WriteLine(degisken.EndsWith("Hoşgelniniz"));
+          Console.WriteLine(degisken.StartsWith("Merhaba"));
+         //indexof
+         Console.WriteLine(degisken.IndexOf("CS"));
+         Console.WriteLine(degisken.IndexOf("sasa"));
+         //insert
+         Console.WriteLine(degisken.Insert(0,"Merhaba"));
+         //lastindexof
+         Console.WriteLine(degisken.LastIndexOf("i"));
+         //padleft,padright
+         Console.WriteLine(degisken+degisken2.PadLeft(30));
+         Console.WriteLine(degisken+degisken2.PadRight(30,'*'));
+         
+
+        }
+    }
+}
+```
+</details>
+             
+## :brain: Ödev 15 (Hazır Metotlar)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+
+namespace Metot
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {  
+         Console.WriteLine(DateTime.Now);
+         Console.WriteLine(DateTime.Now.Date);
+         Console.WriteLine(DateTime.Now.Day);
+         Console.WriteLine(DateTime.Now.Month);
+         Console.WriteLine(DateTime.Now.Year);
+         Console.WriteLine(DateTime.Now.Hour);
+         Console.WriteLine(DateTime.Now.Minute);
+         Console.WriteLine(DateTime.Now.Second);
+         
+         Console.WriteLine(DateTime.Now.DayOfYear);
+         Console.WriteLine(DateTime.Now.DayOfWeek);
+
+         Console.WriteLine(DateTime.Now.ToLongDateString());
+         Console.WriteLine(DateTime.Now.ToShortDateString());
+         Console.WriteLine(DateTime.Now.ToLongTimeString());
+        }
+    }
+}
+```
+</details>
+        
+## :brain: Ödev 16 (Koleksiyonlar)
+
+### :question: SORU 
+Yeni bir console projesi açıp dersteki örnekleri yazınız ve ödevi tamamlayınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+using System.Collections.Generic;
+namespace Koleksiyonlar
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {  
+        //List<T> class
+        //System.Collections.Generic
+        //T=>object türünde
+        List<int> sayiListesi=new List<int>();
+        sayiListesi.Add(23);
+        sayiListesi.Add(10);
+        sayiListesi.Add(4);
+        sayiListesi.Add(5);
+        sayiListesi.Add(92);
+        sayiListesi.Add(34);
+
+        List<string> renkListesi=new List<string>();
+        renkListesi.Add("Kırmızı");
+        renkListesi.Add("Mavi");
+        renkListesi.Add("Turuncu");
+        renkListesi.Add("Sarı");
+        renkListesi.Add("Yeşil");
+
+        //count
+        Console.WriteLine(renkListesi.Count);
+        Console.WriteLine(sayiListesi.Count);
+        foreach (var sayi in sayiListesi)
+        {
+            Console.WriteLine(sayi);
+        }
+        foreach (var renk in renkListesi)
+        {
+        Console.WriteLine(renk);
+        }
+        sayiListesi.ForEach(sayi=>Console.WriteLine(sayi));
+        renkListesi.ForEach(renk=>Console.WriteLine(renk));
+
+
+        }
+    }
+}
+```
+</details>
+        
+## :brain: Ödevleeerrrr2 
+
+### :question: SORU 
+Aşağıdaki 3 soruyu ayrı ayrı console uygulamaları açarak yazınız. Koleksiyonlar-Soru-1, Koleksiyonlar-Soru-2, Koleksiyonlar-Soru-3 isimlerini kullanınız.
+
+Soru - 1: Klavyeden girilen 20 adet pozitif sayının asal ve asal olmayan olarak 2 ayrı listeye atın. (ArrayList sınıfını kullanara yazınız.)
+
+Negatif ve numeric olmayan girişleri engelleyin.
+Her bir dizinin elemanlarını büyükten küçüğe olacak şekilde ekrana yazdırın.
+Her iki dizinin eleman sayısını ve ortalamasını ekrana yazdırın.
+Soru - 2: Klavyeden girilen 20 adet sayının en büyük 3 tanesi ve en küçük 3 tanesi bulan, her iki grubun kendi içerisinde ortalamalarını alan ve bu ortalamaları ve ortalama toplamlarını console'a yazdıran programı yazınız. (Array sınıfını kullanarak yazınız.)
+
+Soru - 3: Klavyeden girilen cümle içerisindeki sesli harfleri bir dizi içerisinde saklayan ve dizinin elemanlarını sıralayan programı yazınız.
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+```csharp
+using System;
+using System.Collections;
+
+namespace koleksiyonlar1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList asal = new ArrayList();
+            ArrayList noAsal = new ArrayList();
+
+            for (int i = 0; i < 20; i++)
+            {
+                System.Console.Write("Lütfen "+ (i+1)+ ". sayıyı giriniz: ");
+                int sayi = Convert.ToInt32(Console.ReadLine());
+                if (negatifMi(sayi))
+                {
+                    int sayac = 0;
+                    for (int k = 2; k < sayi; k++)
+                    {
+                        if (sayi % k == 0)
+                        {
+                            sayac++;
+                        }
+
+                    }
+                    if (sayac == 0)
+                    {
+                        if(sayac==1){
+                            noAsal.Add(sayi);
+                        }
+                        else
+                            asal.Add(sayi);
+                    }
+                    else
+                    {
+                        noAsal.Add(sayi);
+                    }
+
+
+                }
+                else
+                {
+                    System.Console.WriteLine("Lütfen Pozitif ve Numeric Bir sayı Giriniz");
+                }
+
+            }
+            asal.Sort();
+            asal.Reverse();
+            noAsal.Sort();
+            noAsal.Reverse();
+
+            System.Console.WriteLine("----------Asal Sayılar----------");
+
+            foreach (int item in asal)
+            {
+                System.Console.WriteLine(item);
+            }
+            System.Console.WriteLine("----------Asal Olmayan Sayılar----------");
+            
+            foreach (var item in noAsal)
+            {
+                System.Console.WriteLine(item);
+            }
+
+            int toplam1=0;
+            int toplam2=0;
+            foreach (int item in asal)
+            {
+                toplam1=toplam1+item;
+                    
+            }
+             System.Console.WriteLine("Asal Sayıların Ortalaması=  " + toplam1/asal.Count+ "  Dizideki Eleman Sayısı= "+asal.Count );
+            foreach (int item in noAsal)
+            {
+                toplam2=toplam2+item;
+                    
+            }
+             System.Console.WriteLine("Asal Olmayan Sayıların Ortalaması=  " + toplam1/asal.Count+ "  Dizideki Eleman Sayısı= "+noAsal.Count );
+        }
+
+        private static bool negatifMi(int s)
+        {
+            bool sonuc = true;
+            if (s < 0)
+            {
+                sonuc = false;
+            }
+
+            return sonuc;`
+
+        }
+    }
+
+}
+```
+```csharp
+using System;
+using System.Collections;
+
+namespace Koleksiyonlar2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList dizi = new ArrayList();
+            int[] dizi= new int[20];
+
+            for(int i=0;i<20;i++){
+                System.Console.WriteLine("Lütfen" + (i+1) +". sayıyı giriniz: ");
+                int sayi = Convert.ToInt32(Console.ReadLine());
+                dizi.Add(sayi);
+
+            }
+            dizi.Sort();
+            
+            ArrayList enKucuk=new ArrayList();
+            ArrayList enBuyuk=new ArrayList();
+            int sayac=1;
+            foreach (var item in dizi)
+            {
+                if(sayac==1 || sayac==2 || sayac==3){
+                    enKucuk.Add(item);
+                }
+
+                else if(sayac==18|| sayac==19 || sayac==20){
+                    enBuyuk.Add(item);
+                }
+                sayac++;
+
+                
+            }
+            
+            int toplam1=0,toplam2=0 ;
+            foreach (var buyuk in enBuyuk)
+            {
+                toplam1=toplam1+Convert.ToInt32(buyuk);
+            }
+            System.Console.WriteLine("En Büyük Sayıların Ortalaması: " + (toplam1/3));
+
+            foreach (var kucuk in enKucuk)
+            {
+                toplam2=toplam2+Convert.ToInt32(kucuk);
+            }
+            System.Console.WriteLine("En Küçük Sayıların Ortalaması: " + (toplam2/3));
+
+
+        }
+    }
+}
+```
+```csharp
+using System;
+using System.Collections;
+
+namespace Koleksiyon3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList dizi = new ArrayList();
+            Console.Write("Lütfen bir cümle giriniz: ");
+            string metin=Console.ReadLine();
+            string sesli = "aeıioöuüAEIİOÖUÜ";
+            int sayac = 0;
+            for (int i=0;i<metin.Length;i++)
+            {
+                if (sesli.Contains(metin[i]))
+                {
+                    sayac++;
+                    dizi.Add(metin[i]);
+                }
+
+            }
+
+            Console.WriteLine("Kelime içerisinde toplam " + sayac + " tane sesli harf var.");
+            Console.WriteLine("Bunlar Şöyledir.");
+            foreach (var item in dizi)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+```
+</details>

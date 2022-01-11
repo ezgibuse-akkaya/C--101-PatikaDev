@@ -1600,4 +1600,303 @@ namespace contacts_app_csharp
     }
 }
 ```
+## :brain: Proje 2 (ToDo Uygulaması)
+
+### :question: SORU 
+Yeni bir console uygulaması açarak bir 3 kolondan oluşan bir TODO uygulaması yazınız. Uygulamada olması gereken özellikler aşağıdaki gibidir.
+
+1) Kart Ekle
+2) Kart Güncelle
+3) Kart Sil
+4) Kart Taşı
+5) Board Listeleme
+### :green_square: CEVAP
+
+<details>
+<summary>Kodu görmek için tıklayınız.</summary>
+    
+Duration.cs
+```csharp
+namespace todo_app_csharp{
+
+    public enum Duration {
+        XS =1,
+        S =2, 
+        M=3, 
+        L=4, 
+        X=5,
+    }
+    
+}
+```
+Member.cs
+```csharp
+
+namespace todo_app_csharp
+{
+    class Member
+    {
+        //TODO: create a member collection
+        private string _firstName;
+        private string _lastName;
+        private int _id;
+
+        public Member(int id, string fname, string lname) {
+            this._firstName = fname;
+            this._lastName = lname;
+            this._id = id;
+        }
+    }    
+    
+}
+```
+Program.cs
+```csharp
+using System;
+using System.Collections.Generic;
+namespace todo_app_csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   
+            TodoOperations ops = new TodoOperations();
+
+            //Constructor format: 
+            // str title, str content, int duration, int member_id, int status)
+            Todo todo1 = new Todo("todo app", "c sharp", 2, 1, 1);
+            Todo todo2 = new Todo("contacts app", "c#", 1, 2, 2);
+            Todo todo3 = new Todo("coderbyte challange", "c sharp", 1, 2);
+            
+            List<Todo> todoList = new List<Todo>();
+
+            todoList.Add(todo1);
+            todoList.Add(todo2);
+            todoList.Add(todo3);
+
+            int operation = 0;
+            do {
+                Console.WriteLine("Lütfen yapmak istediğiniz işlemi seçiniz:");
+                Console.WriteLine("*****************************************");
+                Console.WriteLine("(1) Board Listelemek");
+                Console.WriteLine("(2) Board'a Kart Eklemek");
+                Console.WriteLine("(3) Board'dan Kart Silmek");
+                Console.WriteLine("(4) Kart Taşımak");
+                Console.WriteLine("(5) Çıkış yapmak");
+                
+                operation = Convert.ToInt16(Console.ReadLine());
+                switch(operation) {
+                    case 1: 
+                        ops.ViewTodoList(todoList);
+                        break;
+                    case 2: 
+                        ops.AddTodo(todoList);
+                        break;
+                    case 3:
+                        ops.DeleteTodo(todoList);
+                        break;
+                    case 4: 
+                        ops.UpdateStatus(todoList);
+                        break;
+                }
+        } while (Convert.ToInt16(operation) != 5  );
+    
+        }
+    }
+}
+```
+ToDo.cs
+```csharp
+using System;
+using System.Collections.Generic;
+namespace todo_app_csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   
+            TodoOperations ops = new TodoOperations();
+
+            //Constructor format: 
+            // str title, str content, int duration, int member_id, int status)
+            Todo todo1 = new Todo("todo app", "c sharp", 2, 1, 1);
+            Todo todo2 = new Todo("contacts app", "c#", 1, 2, 2);
+            Todo todo3 = new Todo("coderbyte challange", "c sharp", 1, 2);
+            
+            List<Todo> todoList = new List<Todo>();
+
+            todoList.Add(todo1);
+            todoList.Add(todo2);
+            todoList.Add(todo3);
+
+            int operation = 0;
+            do {
+                Console.WriteLine("Lütfen yapmak istediğiniz işlemi seçiniz:");
+                Console.WriteLine("*****************************************");
+                Console.WriteLine("(1) Board Listelemek");
+                Console.WriteLine("(2) Board'a Kart Eklemek");
+                Console.WriteLine("(3) Board'dan Kart Silmek");
+                Console.WriteLine("(4) Kart Taşımak");
+                Console.WriteLine("(5) Çıkış yapmak");
+                
+                operation = Convert.ToInt16(Console.ReadLine());
+                switch(operation) {
+                    case 1: 
+                        ops.ViewTodoList(todoList);
+                        break;
+                    case 2: 
+                        ops.AddTodo(todoList);
+                        break;
+                    case 3:
+                        ops.DeleteTodo(todoList);
+                        break;
+                    case 4: 
+                        ops.UpdateStatus(todoList);
+                        break;
+                }
+        } while (Convert.ToInt16(operation) != 5  );
+    
+        }
+    }
+}
+```
+ToDoOperations.cs
+```csharp
+using System;
+using System.Collections.Generic;
+namespace todo_app_csharp
+{
+    class TodoOperations
+    {   
+
+        public void ViewTodoList(List<Todo> todoList) {
+            Console.WriteLine();
+            FindResults(todoList, 0); // View "Todo" line
+            FindResults(todoList, 1); // View "In progress" line
+            FindResults(todoList, 2); // View "Done" line
+        }
+        public void FindResults(List<Todo> todoList, int status) {
+            // List todos based on their status (TODO, IN POGRESS, DONE)
+            List<Todo> results = todoList.FindAll(todo=> todo.GetStatus() == status);
+            if(status==0){
+                Console.WriteLine("TODO Line");
+                Console.WriteLine("************************");
+            }
+            else if(status==1) {
+                Console.WriteLine("IN PROGRESS Line");
+                Console.WriteLine("************************");
+            }
+            else if(status==2) {
+                Console.WriteLine("DONE Line");
+                Console.WriteLine("************************");
+            }
+
+            if (results.Count==0) {
+                Console.WriteLine("~ BOŞ ~");
+                Console.WriteLine();
+            }
+            else {
+                foreach (var todo in results) {
+                    todo.TodoDetails();
+                    Console.WriteLine();
+                }
+            }
+
+        }
+    
+        public void AddTodo(List<Todo> todoList) {
+            Console.WriteLine();
+            Console.Write("Başlık Giriniz                                  :");
+            string title = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("İçerik Giriniz                                  :");
+            string content = Console.ReadLine();
+            Console.WriteLine();
+            Console.Write("Büyüklük Seçiniz -> XS(1),S(2),M(3),L(4),XL(5)  :");
+            int drtn = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine();
+            Console.Write("Kişi Seçiniz                                    :");
+            try {
+                int person = Convert.ToInt16(Console.ReadLine()); 
+                todoList.Add(new Todo(title, content, drtn, person));
+                Console.WriteLine();
+                ViewTodoList(todoList);
+            }
+            catch {
+                Console.WriteLine("Hatalı girişler yaptınız!");
+            }      
+        }
+        public void UpdateStatus(List<Todo> todoList) {
+            Console.WriteLine("Öncelikle taşımak istediğiniz kartı seçmeniz gerekiyor.");
+            Console.Write("Lütfen kart başlığını yazınız: ");
+            string input = Console.ReadLine();
+
+            List<Todo> result = todoList.FindAll(x=> x.GetTitle() == input);
+
+            if(result.Count != 0 ){
+                Console.WriteLine();
+                Console.WriteLine("Bulunan Kart Bilgileri:");
+                Console.WriteLine("**************************************");
+                Console.WriteLine();
+                foreach (Todo item in result)
+                {   
+                    item.TodoDetails();
+                    if(item.GetStatus()==0) {Console.WriteLine("Line        :" + "TODO");}
+                    else if(item.GetStatus()==1) {Console.WriteLine("Line        :" + "IN PROGRESS");}
+                    else if(item.GetStatus()==2) {Console.WriteLine("Line        :" + "DONE");}
+                }
+                Console.WriteLine();
+                Console.WriteLine("Lütfen taşımak istediğiniz Line'ı seçiniz: ");
+                Console.WriteLine("(1) TODO");
+                Console.WriteLine("(2) IN PROGRESS");
+                Console.WriteLine("(3) DONE");
+                int option = Convert.ToInt16(Console.ReadLine());
+                if(option == 1 || option==2 || option==3) { 
+                    option--;
+                    todoList.Find(x=> x.GetTitle() == input).SetStatus((option));
+                    Console.WriteLine("Taşıma işlemi tamamlandı");
+                    ViewTodoList(todoList);
+                }
+                else {Console.WriteLine("Hatalı bir seçim yaptınız!");}    
+            }
+            else {
+                Console.WriteLine("Aradığınız kriterlere uygun kart board'da bulunamadı. Lütfen bir seçim yapınız.");
+                Console.WriteLine("* İşlemi sonlandırmak için : (1)");
+                Console.WriteLine("* Yeniden denemek için : (2)");
+                int option = Convert.ToInt16(Console.ReadLine());
+                if(option == 2) { UpdateStatus(todoList);}
+                else {Console.WriteLine("Taşıma işlemi iptal edildi.");}
+            }
+        }
+
+        public void DeleteTodo(List<Todo> todoList){
+            Console.WriteLine("Öncelikle silmek istediğiniz kartı seçmeniz gerekiyor.");
+            Console.Write("Lütfen kart başlığını yazınız: ");
+            string input = Console.ReadLine();
+
+            List<Todo> result = todoList.FindAll(x=> x.GetTitle() == input);
+
+            if(result.Count != 0 ){
+                foreach (Todo item in result)
+                {
+                    todoList.Remove(item);
+                }
+                Console.WriteLine("Silme işlemi tamamlandı");
+            }
+            else {
+                Console.WriteLine("Aradığınız krtiterlere uygun kart board'da bulunamadı. Lütfen bir seçim yapınız.");
+                Console.WriteLine("* Silmeyi sonlandırmak için : (1)");
+                Console.WriteLine("* Yeniden denemek için : (2)");
+                int option = Convert.ToInt16(Console.ReadLine());
+                if(option == 2) { DeleteTodo(todoList);}
+                else {Console.WriteLine("Silme işlemi iptal edildi.");}
+            }
+            
+        }
+
+    }
+}
+```
+</details>
+    
 
